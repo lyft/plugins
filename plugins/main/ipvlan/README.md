@@ -38,4 +38,8 @@ Because all ipvlan interfaces share the MAC address with the host interface, DHC
 Therefore the container will not be able to reach the host via `ipvlan` interface.
 Be sure to also have container join a network that provides connectivity to the host (e.g. `ptp`).
 * A single master interface can not be enslaved by both `macvlan` and `ipvlan`.
-* For IP allocation schemes that cannot be interface agnostic, the ipvlan plugin can be chained with an earlier plugin that handles this logic. If `master` is omitted, then the previous Result must contain a single interface name for the ipvlan plugin to enslave. If `ipam` is omitted, then the previous Result is used to configure the ipvlan interface.
+* For IP allocation schemes that cannot be interface agnostic, the ipvlan plugin
+can be chained with an earlier plugin that handles this logic. If `master` is
+omitted, then the previous Result must contain a single interface name for the
+ipvlan plugin to enslave. If `ipam` is omitted, then the previous Result is used
+to configure the ipvlan interface.
