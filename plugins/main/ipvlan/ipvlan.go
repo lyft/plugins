@@ -175,7 +175,7 @@ func cmdAdd(args *skel.CmdArgs) error {
 	var result *current.Result
 	// Configure iface from PrevResult if we have IPs and an IPAM
 	// block has not been configured
-	if n.IPAM.Type == "" && n.PrevResult != nil && len(n.PrevResult.IPs) != 0 {
+	if n.IPAM.Type == "" && n.PrevResult != nil && len(n.PrevResult.IPs) > 0 {
 		result = n.PrevResult
 	} else {
 		// run the IPAM plugin and get back the config to apply
